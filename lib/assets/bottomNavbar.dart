@@ -45,7 +45,7 @@ class BottomNavBar extends StatelessWidget {
             ],
           ),
           label: "",
-        ),
+        ),  
         // BottomNavigationBarItem(
         //   icon: Container(
         //     width: 70, // 버튼의 가로 길이를 늘려 타원형으로 만듭니다.
@@ -64,6 +64,15 @@ class BottomNavBar extends StatelessWidget {
             children: [
               Icon(Icons.person),
               Text("내 프로필", style: TextStyle(fontSize: 12, color: Colors.grey)),
+            ],
+          ),
+          label: "",
+        ),
+        BottomNavigationBarItem(
+          icon: Column(
+            children: [
+              Icon(Icons.favorite_border),
+              Text("테스트", style: TextStyle(fontSize: 12, color: Colors.grey)),
             ],
           ),
           label: "",

@@ -76,6 +76,9 @@ class _MeetingMainPageState extends State<MeetingMainPage> {
       case 3:
         context.go('/profile');
         break;
+        case 4:
+        context.go('/test');
+        break;
     }
     
     
