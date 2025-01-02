@@ -30,7 +30,9 @@ class _MeetingMainPageState extends State<MeetingMainPage> {
       final response = await http.get(url);
 
       if (response.statusCode == 200){
-        final List<dynamic> data = json.decode(response.body);
+        // final List<dynamic> data = json.decode(response.body);
+        print(response.bodyBytes);
+        final List<dynamic> data = jsonDecode( utf8.decode(response.bodyBytes));
 
         setState(() {
           meetingData = data.map((item) => {
@@ -59,10 +61,7 @@ class _MeetingMainPageState extends State<MeetingMainPage> {
     
   }
   void _onNavBarTapped(int index) {
-    setState(() {
-      _currentIndex = index;
-    });
-
+    FocusScope.of(context).unfocus(); // 기존 포커스를 해제
     switch (index) {
       case 0:
         context.go('/meeting');
@@ -77,9 +76,8 @@ class _MeetingMainPageState extends State<MeetingMainPage> {
         context.go('/profile');
         break;
     }
-    
-    
   }
+
 
   @override
   Widget build(BuildContext context) {
@@ -185,13 +183,16 @@ class _MeetingMainPageState extends State<MeetingMainPage> {
         backgroundColor: AppColors.secondary,
         shape: CircleBorder(),
         elevation: 4,
-        child: Icon(Icons.add, color:Colors.white),
-        onPressed: (){
-          Navigator.push(context,
-            MaterialPageRoute(builder: (context) => MeetingPostPage() )
+        child: Icon(Icons.add, color: Colors.white),
+        onPressed: () {
+          FocusScope.of(context).unfocus(); // 기존 포커스를 해제
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => MeetingPostPage()),
           );
         },
       ),
+
     );
   }
 }
