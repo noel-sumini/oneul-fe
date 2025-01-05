@@ -71,7 +71,7 @@ class BottomNavBar extends StatelessWidget {
         BottomNavigationBarItem(
           icon: Column(
             children: [
-              Icon(Icons.favorite_border),
+              Icon(Icons.account_circle),
               Text("테스트", style: TextStyle(fontSize: 12, color: Colors.grey)),
             ],
           ),

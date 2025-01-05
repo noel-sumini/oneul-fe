@@ -47,7 +47,7 @@ class _TestPageState extends State {
                 backgroundColor: AppColors.secondary,
                 shape: CircleBorder(),
                 elevation: 4,
-                child: Icon(Icons.add, color:Colors.blue),
+                child: Icon(Icons.exposure_plus_1, color:Colors.blue),
                 onPressed: () {
                   clickPlusButton();
                 },
@@ -56,7 +56,7 @@ class _TestPageState extends State {
                 backgroundColor: AppColors.secondary,
                 shape: CircleBorder(),
                 elevation: 4,
-                child: Icon(Icons.add, color:Colors.red),
+                child: Icon(Icons.exposure_minus_1, color:Colors.red),
                 onPressed: () {
                   clickMinusButton();
                 },
